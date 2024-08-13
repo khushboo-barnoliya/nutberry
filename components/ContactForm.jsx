@@ -1,11 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation'
 
 
 export default function ContactForm() {
-  const router = useRouter()
+  
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -16,6 +15,13 @@ export default function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
+
+  };
+
+  const httpMethods = {
+    POST: 'POST',
+    GET: 'GET',
+    // ... other methods
   };
 
   const handleSubmit = async (e) => {
@@ -24,7 +30,7 @@ export default function ContactForm() {
 
       let response = await fetch('/api/users', {
         cache: "no-store",
-        method: POST,
+        method: httpMethods.POST,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -35,7 +41,6 @@ export default function ContactForm() {
       if (response.success) {
         alert(response.message)
         setResponseMessage(response.message)
-        router.push('/view-users')
       }
       else{
         alert(response.message)
