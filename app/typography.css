@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.heading-primary--main {
+  backface-visibility: hidden;
+  animation-name: moveInLeft;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  color: white;
+}
+
+.heading-primary--sub {
+  backface-visibility: hidden;
+  animation: moveInRight 2s ease-out;
+  color: white;
+}
+
+.heading-secondary {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  background-image: linear-gradient(to right, rgba(175, 130, 96, 0.8), rgba(208, 179, 144, 0.8),rgba(175, 130, 96, 0.8));
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 0.2s;
+}
+
+.heading-secondary:hover {
+  transform: skewX(2deg) skewY(1deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.paragraph {
+   font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 3rem;
+  text-align: justify;
+  width: 90%;
+  font-size: 13px;
+  letter-spacing: -0.4px;
+}
+
+h4 {
+  font-family: Merriweather, serif;
+}

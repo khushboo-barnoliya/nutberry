@@ -1,0 +1,114 @@
+.card {
+  perspective: 50rem;
+  -moz-perspective: 50rem;
+  min-height: 52rem;
+}
+.cardSide {   
+  position: absolute;
+  width: 100%;
+  min-height: 52rem;
+  backface-visibility: hidden;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.8s ease-out;
+}
+.cardSideBack {
+  transform: rotateY(180deg);
+}
+.cardSideBack1 {
+  background-image: linear-gradient(to right bottom, rgb(228, 196, 158), #af8260);
+}
+.card:hover .cardSideFront {
+  transform: rotateY(-180deg);
+}
+.card:hover .cardSideBack {
+  transform: rotateY(0deg);
+}
+.cardPicture {
+  background-size: cover;
+  height: 23rem;
+  background-blend-mode: screen;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.cardPicture1 {
+  background-image: linear-gradient(to right bottom, rgb(228, 196, 158), rgb(175, 130, 96)),
+    url(/images/card-img.webp);
+}
+.cardPicture2 {
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+    url(/img/nat-6.jpg);
+}
+.cardPicture3 {
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa),
+    url(/img/nat-7.jpg);
+}
+.cardHeading {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: right;
+  position: absolute;
+  top: 12rem;
+  right: 2rem;
+  width: 75%;
+}
+.cardHeadingSpan {
+  padding: 1rem 1.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.cardHeadingSpan1 {
+  background-image: linear-gradient(to right bottom, rgba(228, 196, 158, 0.8), rgba(175, 130, 96, 0.8));
+}
+.cardHeadingSpan2 {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(126, 213, 111, 0.8),
+    rgba(40, 180, 133, 0.8),
+  );
+}
+.cardHeadingSpan3 {
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(41, 152, 255, 0.8),
+    rgba(86, 67, 250, 0.8)
+  );
+}
+.cardDetails {
+  padding: 3rem;
+}
+.cardDetails ul {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.cardDetails ul li {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.cardDetails ul li:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+.cardCta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.cardPriceBox {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 8rem;
+}
+.cardPriceOnly {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+.cardPriceValue {
+  font-size: 6rem;
+  font-weight: 100;
+}

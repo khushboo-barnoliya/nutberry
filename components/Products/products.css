@@ -1,0 +1,68 @@
+/* ============= PROJECT CSS =============== */
+
+.btn-container {
+  margin: 0 0 4rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.section-center {
+  width: 80vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  display: grid;
+  gap: 2rem;
+}
+
+.menu-item {
+  background: var(--white);
+  border-radius: var(--borderRadius);
+}
+.item-info {
+  padding: 1.5rem;
+}
+.item-info header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.item-info h5 {
+  font-weight: 500;
+  text-align: center;
+}
+.item-price {
+  background: var(--primary-500);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  letter-spacing: var(--letterSpacing);
+  border-radius: var(--borderRadius);
+}
+
+.item-text {
+  line-height: 2;
+  color: var(--grey-500);
+}
+
+.section-center {
+  justify-items: center;
+}
+.menu-item {
+  max-width: 30rem
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .section-center {
+    width: 95vw;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
