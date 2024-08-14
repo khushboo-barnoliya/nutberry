@@ -8,7 +8,7 @@ export async function POST(req) {
   
   try {
     const { name, phone, message } = await req.json();
-    const dateOfOrder = Date.now()
+    const dateOfOrder = new Date().getTime()
 
     const checkUser = await userModel.findOne({name})
     if (checkUser) {
@@ -18,7 +18,7 @@ export async function POST(req) {
       })
     }
     
-    const newUser = new userModel({name, phone, message, orderDate : dateOfOrder.getDate()})
+    const newUser = new userModel({name, phone, message, orderDate: dateOfOrder})
     await newUser.save();
     
     return NextResponse.json({

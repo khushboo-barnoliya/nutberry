@@ -1,9 +1,12 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 
 export default function ContactForm() {
+
+  const router = useRouter()
   
   const [formData, setFormData] = useState({
     name: '',
@@ -40,7 +43,8 @@ export default function ContactForm() {
       response = await response.json()
       if (response.success) {
         alert(response.message)
-        setResponseMessage(response.message)
+        setResponseMessage(responseMessage)
+        router.push("/contact/submission")
       }
       else{
         alert(response.message)
