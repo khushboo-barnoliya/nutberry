@@ -1,4 +1,4 @@
-'use client';
+"use client"
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function ContactForm() {
 
   const router = useRouter()
-  
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -46,7 +46,7 @@ export default function ContactForm() {
         setResponseMessage(responseMessage)
         router.push("/contact/submission")
       }
-      else{
+      else {
         alert(response.message)
       }
 
@@ -82,6 +82,7 @@ export default function ContactForm() {
       <div className="form__group">
         <input
           minLength={10}
+          maxLength={10}
           type="number"
           name="phone"
           id="phone"

@@ -1,37 +1,25 @@
-"use client"
-
-import { connectDB } from "@/utils/database/db";
-import userModel from "@/utils/Schema/userSchema";
-import { useEffect } from "react";
 
 
-async function AdminPage() {
-  const [users, setUsers] = useState([]);
-
-  const fetchUsers = async () => {
-    try {
-      connectDB()
-      const users = await userModel.find({});
-      return users;
-    } catch (error) {
-      console.error('Error fetching users:', error);
-      throw error;
+const fetchUserData = async() => {
+  try {
+    const res = await fetch("/api/users", {
+      cache: "no-store"
+    })
+    if(!res.ok){
+      throw new Error("Failed to Fetch User")
     }
-  };
+    return res.json();
+  } catch (error) {
+    console.log("Error loading data: ", error)
+  }
+};
 
-  useEffect(() => {
-    const fetchUsersData = async () => {
-      try {
-        const fetchedUsers = await fetchUsers();
-        setUsers(fetchedUsers);
-      } catch (error) {
-        console.error('Error fetching users:', error);   
 
-      }
-    };
+export default async function AdminPage() {
 
-    fetchUsersData();
-  }, []);
+
+  const fetchUser = await fetchUserData();
+
   return (
 
     <div className="w-full px-56 min-h-[100vh] flex-shrink-0 flex items-center flex-col justify-center">
@@ -64,25 +52,26 @@ async function AdminPage() {
           <tbody>
 
             {
-              users.map((user, i) => (
-                <tr key={i} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-[15px]">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {user.name}
-                </th>
-                <td class="px-6 py-8">
-                  {user.phone}
-                </td>
-                <td class="px-6 py-8">
-                  {user.message}
-                </td>
-                <td class="px-6 py-8">
-                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
-                </td>
-              </tr>
+              fetchUser.map((user) => (
+                <tr key={user._id} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-[15px]">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {user.name}
+                  </th>
+                  <td class="px-6 py-8">
+                    {user.phone}
+                  </td>
+                  <td class="px-6 py-8">
+                    {user.message}
+                  </td>
+                  <td class="px-6 py-8">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                  </td>
+                </tr>
               ))
             }
-            
-              
+
+
+
 
           </tbody>
         </table>
@@ -92,5 +81,3 @@ async function AdminPage() {
 
   );
 }
-
-export default AdminPage;

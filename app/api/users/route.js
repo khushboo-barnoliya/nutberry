@@ -21,6 +21,7 @@ export async function POST(req) {
     const newUser = new userModel({name, phone, message, orderDate: dateOfOrder})
     await newUser.save();
     
+
     return NextResponse.json({
       success: true,
       message: "User saved successfully!"
@@ -33,4 +34,21 @@ export async function POST(req) {
     })
   }
   
+};
+
+
+
+export async function GET() {
+  const fetchUser = await userModel.find();
+  return NextResponse.json({fetchUser})
+};
+
+
+export async function DELETE(request) {
+  const id = request.nextUrl.searchParams.get("id");
+  await userModel.findByIdAndDelete(id);
+  return NextResponse.json({
+    success: true,
+    message: "User Deleted successfully!"
+  })
 }
