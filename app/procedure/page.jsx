@@ -28,23 +28,23 @@ const page = () => {
             </h2>
           </div>
 
-          <div class="flex flex-wrap gap-20 max-w-[114rem] mx-auto text-3xl pb-40">
+          <div className="flex flex-wrap gap-20 max-w-[114rem] mx-auto text-3xl pb-40">
             {procedure.map((item) => {
               const { id, imgsrc, title, step, text } = item;
               return (
-                <div class="story" key={id}>
-                  <figure class="story__shape">
+                <div className="story" key={id}>
+                  <figure className="story__shape">
                     <Image
                       src={imgsrc}
                       alt={title}
-                      class="story__img"
+                      className="story__img"
                       height={1000}
                       width={1000}
                     />
-                    <figcaption class="story__caption">{step}</figcaption>
+                    <figcaption className="story__caption">{step}</figcaption>
                   </figure>
-                  <div class="story__text">
-                    <h3 class="text-4xl text-slate-700 mb-8">{title}</h3>
+                  <div className="story__text">
+                    <h3 className="text-4xl text-slate-700 mb-8">{title}</h3>
                     <p>{text}</p>
                   </div>
                 </div>

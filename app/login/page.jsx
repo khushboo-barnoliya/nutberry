@@ -11,26 +11,26 @@ const LoginPage = () => {
 
       <div className="flex items-center justify-center my-20">
 
-        <div className="flex min-h-full flex-col border justify-center p-12 rounded-lg py-20 lg:px-8">
-          <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="flex min-h-full flex-col border justify-center p-8 rounded-lg py-20 lg:px-14 w-[40rem] shadow-md">
+          <div className="sm:mx-auto sm:w-full sm:max-w-ms">
             <h2 className=" text-center text-4xl font-bold leading-9 tracking-tight text-gray-900">Log in to your account</h2>
           </div>
 
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-md">
+          <div className="mt-10 sm:w-full sm:max-w-lg">
             <form className="space-y-6" action="#" method="POST">
-              <div>
-                <label for="email" className="block text-[12px] font-medium leading-6 text-gray-900">Email address</label>
-                <div className="mt-2">
-                  <input id="email" name="email" type="email" autocomplete="email" required className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#0D68A0] sm:text-[12px] sm:leading-6 focus:outline-0 p-3" />
+              <div className="w-full">
+                <label htmlFor="email" className="block text-[12px] font-medium leading-6 text-gray-900">Email address</label>
+                <div className="mt-2 w-full">
+                  <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#0D68A0] sm:text-[12px] sm:leading-6 focus:outline-0 p-3" />
                 </div>
               </div>
 
-              <div>
-                <div classNameName="flex items-center justify-between">
-                  <label for="password" className="block text-[12px] font-medium leading-6 text-gray-900">Password</label>
+              <div className="w-full">
+                <div className="flex items-center justify-between">
+                  <label htmlFor="password" className="block text-[12px] font-medium leading-6 text-gray-900">Password</label>
                 </div>
-                <div className="mt-2">
-                  <input id="password" name="password" type="password" autocomplete="current-password" required className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#0D68A0] sm:text-[12px] sm:leading-6 focus:outline-0 p-3" />
+                <div className="mt-2 w-full">
+                  <input id="password" name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-1 focus:ring-inset focus:ring-[#0D68A0] sm:text-[12px] sm:leading-6 focus:outline-0 p-3" />
                 </div>
               </div>
 

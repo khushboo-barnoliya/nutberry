@@ -14,16 +14,11 @@ const DeleteBtn = ({ id }) => {
 
 
   const deleteUser = async () => {
-
-    const confirmed = confirm("Do you want to Remove this user?")
-
-    if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/users?id=${id}`, {
-        method: httpMethods.DELETE,
-      });
-      if (res.ok) {
-        router.refresh();
-      }
+    const res = await fetch(`http://localhost:3000/api/users?id=${id}`, {
+      method: httpMethods.DELETE,
+    });
+    if (res.ok) {
+      router.refresh();
     }
   };
 

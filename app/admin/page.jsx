@@ -35,11 +35,11 @@ const AdminPage = async() => {
           <h1 className='font-bold mb-5 text-[20px]'>User Content</h1>
         </div>
 
-        <div class="relative shadow-md sm:rounded-xl bg-white overflow-hidden w-full">
-          <div className="w-full overflow-x-auto overflow-y-auto max-h-[600px]">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 bg-white">
-              <thead class="text-[14px] sticky top-0 text-gray-700 backdrop-blur-sm dark:border-gray-700 border-r-gray-700 uppercase bg-gray-100/50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
+        <div className="relative shadow-md sm:rounded-xl bg-white overflow-hidden w-full">
+          <div className="w-full overflow-x-auto overflow-y-auto max-h-[611px]">
+            <table className="w-full text-sm text-left rtl:text-right text-gray-500 bg-white">
+              <thead>
+                <tr className="dark:border-gray-400 border-b text-[14px] sticky top-0 text-gray-700 backdrop-blur-sm uppercase bg-gray-100/50">
                   <th scope="col" className="px-20 py-10">User Name</th>
                   <th scope="col" className="px-10 py-10">Phone Number</th>
                   <th scope="col" className="px-10 py-10">Message</th>
@@ -50,8 +50,8 @@ const AdminPage = async() => {
                 {
                   users.map((user) => {
                     return (
-                      <tr key={user._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 text-[15px]">
-                        <th scope="row" className="px-20 py-8 font-medium capitalize text-gray-900 whitespace-nowrap dark:text-white">
+                      <tr key={user._id} className="bg-white border-b dark:border-gray-200  text-gray-900 text-[15px]">
+                        <th scope="row" className="px-20 py-8 font-semibold capitalize whitespace-nowrap">
                           {user.name}
                         </th>
                         <td className="px-10 py-8">{user.phone}</td>
