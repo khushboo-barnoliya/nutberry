@@ -40,7 +40,7 @@ const page = () => {
               />
             </div>
             <a href="tel:+919214089242" className="text-2xl">
-              +91 92140-89242
+              +91-9214089242
             </a>
           </div>
 

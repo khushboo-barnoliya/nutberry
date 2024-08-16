@@ -23,6 +23,7 @@
   padding: 1.5rem 2rem;
   width: 100%;
   display: block;
+  text-transform: capitalize;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.5);
   border-bottom: 3px solid transparent;

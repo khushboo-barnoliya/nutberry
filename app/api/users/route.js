@@ -1,9 +1,20 @@
 import { NextResponse } from 'next/server';
-import { connectDB } from '@/utils/database/db.js';
-import userModel from '@/utils/Schema/userSchema'
+import connectDB from '../../../libs/db';
+import userModel from '../../../models/userSchema';
 
 connectDB();
 
+
+// fetch user
+export async function GET() {
+  await connectDB();
+  const users = await userModel.find();
+  return NextResponse.json({ users });
+}
+
+
+
+// create user
 export async function POST(req) {
   
   try {
@@ -37,13 +48,7 @@ export async function POST(req) {
 };
 
 
-
-export async function GET() {
-  const fetchUser = await userModel.find();
-  return NextResponse.json({fetchUser})
-};
-
-
+// delete user
 export async function DELETE(request) {
   const id = request.nextUrl.searchParams.get("id");
   await userModel.findByIdAndDelete(id);
