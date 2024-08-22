@@ -52,6 +52,14 @@ const Navigation = () => {
               Contact Us
             </a>
           </li>
+          <li className="navigation__item">
+            <a
+              href="/signin"
+              className="navigation__link sm:text-4xl text-2xl"
+            >
+              Sign In
+            </a>
+          </li>
         </ul>
       </nav>
     </div>

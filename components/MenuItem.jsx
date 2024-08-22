@@ -12,8 +12,8 @@ const MenuItem = ({ img, title, price, desc }) => {
 
         <div className="flex justify-center items-center">
           <Link href="/contact">
-          <button type="button" className="px-10 py-2 bg-[#af8260] rounded-lg text-[18px] capitalize text-white font-normal hover:bg-[#af8260ae] active:scale-[0.98]">
-            Buy
+          <button type="button" className="px-10 py-2 bg-[#af8260] transition-all duration-150 rounded-lg text-[18px] capitalize text-white font-normal hover:bg-[#af8260ae] active:scale-[0.98]">
+            Add to Cart
           </button>
           </Link>
           
