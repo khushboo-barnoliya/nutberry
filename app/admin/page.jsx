@@ -1,13 +1,12 @@
 
 // Import required components
-import Logo from "@/components/Logo/Logo";
 import DeleteBtn from "@/components/DeleteBtn";
 
 // Fetch data from the API
 const getFetch = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/users", {
-      cache: "no-store",
+    const res = await fetch(process.env.API_URL, {
+      cache: "force-cache"
     });
 
     if (!res.ok) {
@@ -22,13 +21,11 @@ const getFetch = async () => {
 
 // AdminPage component
 const AdminPage = async() => {
-  const { users } =  await getFetch();
+  const  { users }  =  await getFetch() || {};
 
   return (
-    <div className="w-full py-80 min-h-[100vh] bg-[#d09f667e] flex-shrink-0 flex items-center flex-col justify-center">
-      <nav className="bg-transparent w-full h-[20rem] fixed top-0 start-0 z-50">
-        <Logo src="/images/nutberry-logo-black.svg" />
-      </nav>
+    <div className="w-full py-44 min-h-[100vh] bg-[#d09f667e] flex-shrink-0 flex items-center flex-col justify-center">
+
 
       <div className="userMain w-full px-40 z-0">
         <div className="text-start w-full">

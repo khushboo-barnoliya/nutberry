@@ -6,7 +6,8 @@ const userSchema = mongoose.Schema(
   name: {type: String, required: true},
   phone: {type: Number, required: true},
   message: {type: String, required: true},
-  orderDate: {type: Date, required: true}
+  orderDate: {type: Date, required: true},
+  isPaid: {type: String, required: true},
   }
 );
 
