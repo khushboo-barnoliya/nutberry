@@ -1,7 +1,13 @@
+'use client'
+
 // import Link from "next/link";
 import "./Navigation.css";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navigation = () => {
+
+  const {status} = useSession();
+
   return (
     <div className="navigation overflow-hidden">
       <input
@@ -52,13 +58,32 @@ const Navigation = () => {
               Contact Us
             </a>
           </li>
+
           <li className="navigation__item">
-            <a
-              href="/signin"
+
+
+          {
+            status === 'authenticated' ? (
+              <a
+              href="/auth/signin"
               className="navigation__link sm:text-4xl text-2xl"
+              onClick={() => signOut()}
+            >
+              My Account
+            </a>
+            ) : (
+              <a
+              href="/auth/signin"
+              className="navigation__link sm:text-4xl text-2xl"
+              onClick={() => signIn("google")}
             >
               Sign In
             </a>
+            )
+          }
+
+
+            
           </li>
         </ul>
       </nav>

@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react";
-import menu from "./data";
-import Menu from "../Menu";
-import Categories from "../Categories";
+import menu from "@/components/Products/data";
+import Menu from "@/components/Menu";
+import Categories from "@/components/Categories";
 import "./products.css";
 
 const allCategories = ["all", ...new Set(menu.map((item) => item.category))];
