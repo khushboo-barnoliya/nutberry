@@ -1,17 +1,25 @@
-'use client'
-
+'use client';
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-// import menu from "@/components/Products/data";
 
-export default function ProductOverview({img, title, price}) {
-  const [quantity, setQuantity] = useState(1);
-  
+interface ProductOverviewProps {
+  img: string;
+  title: string;
+  price: number;
+}
+
+const ProductOverview: React.FC<ProductOverviewProps> = ({ img, title, price }) => {
+  const [quantity, setQuantity] = useState<number>(1);
 
   const handleBuyNow = () => {
     // Handle the buy now logic here, such as adding to cart or proceeding to checkout
     alert(`Buying ${quantity} item(s) of ${title}`);
+  };
+
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10);
+    setQuantity(value >= 1 ? value : 1); // Ensure quantity is at least 1
   };
 
   return (
@@ -31,7 +39,7 @@ export default function ProductOverview({img, title, price}) {
         {/* Product Details */}
         <div className="mt-4 md:mt-0 md:ml-6">
           <h1 className="text-3xl font-bold text-gray-900">{title}</h1>
-          <p className="text-xl font-semibold text-gray-800 mt-2">Rs.{price}</p>
+          <p className="text-xl font-semibold text-gray-800 mt-2">Rs. {price}</p>
 
           {/* Quantity Input */}
           <div className="mt-6">
@@ -42,7 +50,7 @@ export default function ProductOverview({img, title, price}) {
               id="quantity"
               type="number"
               value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={handleQuantityChange}
               className="mt-1 block w-24 p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               min="1"
             />
@@ -59,5 +67,6 @@ export default function ProductOverview({img, title, price}) {
       </div>
     </div>
   );
-}
+};
 
+export default ProductOverview;

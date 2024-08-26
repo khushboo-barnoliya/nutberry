@@ -1,6 +1,6 @@
 'use client'
 
-import ProductOverview from "@/[id]/page";
+import ProductOverview from "./[id]/page";
 import menu from "@/components/Products/data";
 
 
